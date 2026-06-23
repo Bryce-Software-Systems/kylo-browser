@@ -1,0 +1,17 @@
+{
+  "name": "kylo-browser-modern-runtime",
+  "version": "1.1.1-modern.0",
+  "description": "Modern Chromium/Electron runtime for Kylo Browser's 10-foot TV experience.",
+  "main": "src/modern/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "check:syntax": "node --check src/modern/main.js && node --check src/modern/preload.js && node --check src/modern/renderer.js"
+  },
+  "devDependencies": {
+    "electron": "^42.4.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

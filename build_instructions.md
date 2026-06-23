@@ -1,3 +1,28 @@
+Building the Modern Chromium Runtime
+====================================
+
+The original XULRunner build remains documented below for archival and migration work only. For safe day-to-day browsing, Kylo now uses the Electron runtime in `src/modern`, which embeds Chromium instead of the deprecated Gecko SDK/XULRunner stack. This keeps Kylo's 10-foot television experience in the application shell while allowing browser security fixes to come from Electron/Chromium updates.
+
+Requirements:
+
+* Node.js 22.12.0 or newer
+* npm
+
+Commands:
+
+```sh
+npm install
+npm start
+```
+
+Validation:
+
+```sh
+npm run check:syntax
+```
+
+The legacy instructions below are retained so existing XUL assets, native input components, and packaging notes remain discoverable during the migration.
+
 Building Kylo from Source
 ==============================
 
