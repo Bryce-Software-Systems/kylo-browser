@@ -81,3 +81,66 @@ button:focus, input:focus {
 }
 
 .tab.active { background: #3f78ad; }
+
+.osk {
+  background: linear-gradient(#14253a, #07111f);
+  border-top: 2px solid rgba(255, 255, 255, 0.18);
+  bottom: 0;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.55);
+  box-sizing: border-box;
+  height: 260px;
+  left: 0;
+  padding: 10px 18px 14px;
+  position: fixed;
+  right: 0;
+  z-index: 10;
+}
+
+.osk[hidden] { display: none; }
+
+.osk-header {
+  align-items: center;
+  display: flex;
+  font-size: 22px;
+  font-weight: 700;
+  gap: 18px;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.osk-help {
+  color: #b8d7ef;
+  flex: 1;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+#osk-close {
+  font-size: 24px;
+  min-height: 38px;
+  min-width: 48px;
+  padding: 0 12px;
+}
+
+.osk-keys {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.osk-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.osk-key {
+  border-radius: 14px;
+  font-size: 22px;
+  min-height: 34px;
+  min-width: 62px;
+  padding: 0 12px;
+}
+
+.osk-key.wide { min-width: 132px; }
