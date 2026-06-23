@@ -14,6 +14,7 @@ let mainWindow;
 let tabs = [];
 let activeTabId = null;
 let nextTabId = 1;
+let oskVisible = false;
 
 function normalizeUrl(input) {
   const value = String(input || '').trim();
@@ -47,11 +48,12 @@ function layoutActiveView() {
   if (!mainWindow || !tab) return;
   const bounds = mainWindow.getContentBounds();
   const toolbarHeight = 116;
+  const oskHeight = oskVisible ? 260 : 0;
   tab.view.setBounds({
     x: 0,
     y: toolbarHeight,
     width: bounds.width,
-    height: Math.max(bounds.height - toolbarHeight, 0),
+    height: Math.max(bounds.height - toolbarHeight - oskHeight, 0),
   });
   tab.view.setAutoResize({ width: true, height: true });
 }
@@ -170,6 +172,10 @@ ipcMain.handle('kylo:activate-tab', (_event, id) => { activeTabId = id; attachAc
 ipcMain.handle('kylo:navigate', (_event, action, value) => navigateActive(action, value));
 ipcMain.handle('kylo:zoom', (_event, direction) => zoomActive(direction));
 ipcMain.handle('kylo:fullscreen', () => mainWindow.setFullScreen(!mainWindow.isFullScreen()));
+ipcMain.handle('kylo:osk-visible', (_event, visible) => {
+  oskVisible = Boolean(visible);
+  layoutActiveView();
+});
 
 app.whenReady().then(createWindow);
 app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); });

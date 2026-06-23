@@ -11,5 +11,6 @@ contextBridge.exposeInMainWorld('kylo', {
   navigate: (action, value) => ipcRenderer.invoke('kylo:navigate', action, value),
   zoom: (direction) => ipcRenderer.invoke('kylo:zoom', direction),
   fullscreen: () => ipcRenderer.invoke('kylo:fullscreen'),
+  setOskVisible: (visible) => ipcRenderer.invoke('kylo:osk-visible', visible),
   onState: (callback) => ipcRenderer.on('kylo:state', (_event, state) => callback(state)),
 });

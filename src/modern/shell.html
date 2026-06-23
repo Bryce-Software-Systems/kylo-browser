@@ -17,6 +17,7 @@
     <form id="go-form" class="address" role="search">
       <input id="location" aria-label="Address or search" autocomplete="off" placeholder="Search or enter address">
       <button title="Go">Go</button>
+      <button id="show-osk" type="button" title="On-screen keyboard">⌨</button>
     </form>
     <nav class="cluster" aria-label="Page controls">
       <button id="zoom-out" title="Zoom out">−</button>
@@ -26,6 +27,14 @@
     </nav>
   </header>
   <section class="tabs" id="tabs" aria-label="Open tabs"></section>
+  <section id="osk" class="osk" aria-label="On-screen keyboard" hidden>
+    <div class="osk-header">
+      <span>On-screen keyboard</span>
+      <span class="osk-help">Arrow keys move • Enter selects • Esc deletes/closes</span>
+      <button id="osk-close" type="button" title="Close on-screen keyboard">×</button>
+    </div>
+    <div id="osk-keys" class="osk-keys"></div>
+  </section>
   <script src="renderer.js"></script>
 </body>
 </html>
