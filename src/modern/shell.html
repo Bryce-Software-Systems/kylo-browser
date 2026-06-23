@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kylo Browser</title>
+  <link rel="stylesheet" href="shell.css">
+</head>
+<body>
+  <header class="toolbar" aria-label="Kylo 10-foot browser controls">
+    <nav class="cluster" aria-label="Navigation">
+      <button id="back" title="Back">◀</button>
+      <button id="forward" title="Forward">▶</button>
+      <button id="reload" title="Reload">↻</button>
+      <button id="home" title="Home">⌂</button>
+    </nav>
+    <form id="go-form" class="address" role="search">
+      <input id="location" aria-label="Address or search" autocomplete="off" placeholder="Search or enter address">
+      <button title="Go">Go</button>
+    </form>
+    <nav class="cluster" aria-label="Page controls">
+      <button id="zoom-out" title="Zoom out">−</button>
+      <button id="zoom-reset" title="Reset zoom">100%</button>
+      <button id="zoom-in" title="Zoom in">+</button>
+      <button id="fullscreen" title="Fullscreen">⛶</button>
+    </nav>
+  </header>
+  <section class="tabs" id="tabs" aria-label="Open tabs"></section>
+  <script src="renderer.js"></script>
+</body>
+</html>

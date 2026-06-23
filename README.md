@@ -22,5 +22,20 @@ Helpful info regarding use of the Kylo name and trademarks. If you're planning o
 
 For more information about Hillcrest Labs, please visit [hillcrestlabs.com](http://hillcrestlabs.com).
 
+
+Modern runtime
+--------------
+
+Kylo's original XULRunner/Gecko 10-12 runtime is kept in the tree for historical reference, but it should no longer be used for normal browsing. The maintained runtime path is now the Electron/Chromium shell in `src/modern`, which preserves the 10-foot TV controls (large toolbar, pointer-friendly targets, tabs, zoom, fullscreen, and remote-friendly keyboard shortcuts) while moving web content into a current sandboxed Chromium engine.
+
+To run the modern browser shell:
+
+```sh
+npm install
+npm start
+```
+
+Use `npm run check:syntax` for a dependency-light validation of the modern runtime entry points.
+
 * * *
 &copy; 2012-2016 Hillcrest Labs. All rights reserved. Hillcrest Labs, Kylo, and the Loop are trademarks of Hillcrest Laboratories, Inc.
